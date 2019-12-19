@@ -7,18 +7,18 @@ import { MyCheckbox } from "./MyCheckbox";
 import { MySelect } from "./MySelect";
 import axios from 'axios';
 
-// And now we can use these
+
 const SignupForm = () => {
   return (
     <>
-      <h1>Subscribe!</h1>
+      <h1>Welcome Sign Up!</h1>
       <Formik
         initialValues={{
           firstName: "",
           lastName: "",
           email: "",
-          acceptedTerms: false, // added for our checkbox
-          jobType: "" // added for our select
+          acceptedTerms: false, 
+          jobType: "" 
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -34,8 +34,7 @@ const SignupForm = () => {
             .required("Required")
             .oneOf([true], "You must accept the terms and conditions."),
           jobType: Yup.string()
-            // specify the set of valid values for job type
-            // @see http://bit.ly/yup-mixed-oneOf
+      
             .oneOf(
               ["designer", "development", "product", "other"],
               "Invalid Job Type"
@@ -43,11 +42,7 @@ const SignupForm = () => {
             .required("Required")
         })}
         onSubmit={(values, { setSubmitting, resetForm,setStatus }) => {
-        //   setTimeout(() => {
-        //     alert(JSON.stringify(values, null, 2));
-        //     setSubmitting(false);
-        //     resetForm();
-        //   }, 400);
+     
             doStuff(values);
             setSubmitting(false);
             resetForm();
