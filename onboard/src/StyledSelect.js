@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 // Styled components ....
-export const StyledSelect = styled.select`
-  color: var(--blue);
-`;
+export const StyledSelect = styled.select`color: var(--blue);`
 export const StyledErrorMessage = styled.div`
   font-size: 12px;
   color: var(--red-600);
